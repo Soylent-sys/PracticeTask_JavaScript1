@@ -1,0 +1,39 @@
+/* default*/
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* body */
+
+.Sw-Container {
+  padding: 0 40px;
+}
+
+.Sw-Container h3 {
+  margin: 20px 0;
+}
+
+.Time-Display-Area {
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.Time-Display-Area span {
+  margin: 0 5px;
+  font-size: 28px;
+}
+
+.Sw-Buttons button {
+  padding: 10px;
+}
