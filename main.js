@@ -9,7 +9,7 @@ const startButton = document.getElementById('CountStart');
 const stopButton = document.getElementById('CountStop');
 const resetButton = document.getElementById('CountReset');
 
-// カウント取得変数
+// 各単位毎のカウント取得変数
 let ms10Count = 0;
 let sCount = 0;
 let mCount = 0;
@@ -23,7 +23,9 @@ function countStart() {
     timerStart = setInterval(countUpMs, 100);
     startButton.disabled = true;
     stopButton.disabled = false;
-    resetButton.disabled = true;
+    if ( resetButton.disabled === false ) {
+        resetButton.disabled = true;
+    }
 }
 
 // ストップボタン押下時の動作
@@ -82,7 +84,7 @@ function countUpHour() {
     hCount++;
     timerH.textContent = mCount;
     if (hCount > 99) {
-        //１００時間に到達した場合はカウンターストップ
+        //１００時間に到達した場合はカウンターストップ。リセットボタンのみ活性化
         clearInterval(timerStart);
         stopButton.disabled = true;
         resetButton.disabled = false;
