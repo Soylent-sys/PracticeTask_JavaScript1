@@ -47,6 +47,9 @@ function countReset() {
     hCount = 0;
     timerH.textContent = 0;
     resetButton.disabled = true;
+    if (startButton.disabled === true) {
+        startButton.disabled = false;
+    }
 }
 
 // 各時間単位毎の動作
@@ -82,7 +85,7 @@ function countUpMin() {
 
 function countUpHour() {
     hCount++;
-    timerH.textContent = mCount;
+    timerH.textContent = hCount;
     if (hCount > 99) {
         //１００時間に到達した場合はカウンターストップ。リセットボタンのみ活性化
         clearInterval(timerStart);
