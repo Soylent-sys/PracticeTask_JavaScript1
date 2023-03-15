@@ -6,18 +6,19 @@
     <link rel="stylesheet" href="main.css">
     <title>ストップウォッチ</title>
   </head>
+  
   <body>
     <section class="Sw-Wrapper">
       <div class="Sw-Container">
         <div class="Sw-Content">
           <h3>ストップウォッチ</h3>
           <div class="Time-Display-Area">
-            <span class="Minute">0</span>:<span class="tSecond">0</span>:<span class="Second">0</span>:<span class="mSecond">0</span>
+            <span class="Hour">0</span>:<span class="Minute">0</span>:<span class="Second">0</span>:<span class="mSecond">0</span>
           </div>
           <div class="Sw-Buttons">
-            <button class="CountStart" onclick=;>スタート</button>
-            <button class="CountStop" onclick=; disabled>ストップ</button>
-            <button class="CountReset" onclick=; disabled>リセット</button>
+            <button id="CountStart" onclick=countStart();>スタート</button>
+            <button id="CountStop" onclick=countStop(); disabled>ストップ</button>
+            <button id="CountReset" onclick=countReset(); disabled>リセット</button>
           </div>
         </div>
       </div>
