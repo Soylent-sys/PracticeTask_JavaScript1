@@ -1,8 +1,8 @@
 // 各時間の単位毎の要素を取得
-const timer10ms = document.getElementsByClassName('mSecond')[0];
-const timerS = document.getElementsByClassName('Second')[0];
-const timerM = document.getElementsByClassName('Minute')[0];
-const timerH = document.getElementsByClassName('Hour')[0];
+const elmTimer10ms = document.getElementsByClassName('mSecond')[0];
+const elmTimerS = document.getElementsByClassName('Second')[0];
+const elmTimerM = document.getElementsByClassName('Minute')[0];
+const elmTimerH = document.getElementsByClassName('Hour')[0];
 
 // 各ボタンの要素を取得
 const startButton = document.getElementById('CountStart');
@@ -39,13 +39,13 @@ function countStop() {
 // リセットボタン押下時の動作
 function countReset() {
     ms10Count = 0;
-    timer10ms.textContent = 0;
+    elmTimer10ms.textContent = 0;
     sCount = 0;
-    timerS.textContent = 0;
+    elmTimerS.textContent = 0;
     mCount = 0;
-    timerM.textContent = 0;
+    elmTimerM.textContent = 0;
     hCount = 0;
-    timerH.textContent = 0;
+    elmTimerH.textContent = 0;
     resetButton.disabled = true;
     if (startButton.disabled === true) {
         startButton.disabled = false;
@@ -55,39 +55,38 @@ function countReset() {
 // 各時間単位毎の動作
 function countUpMs() {
     ms10Count++;
-    timer10ms.textContent = ms10Count;
+    elmTimer10ms.textContent = ms10Count;
     if (ms10Count > 9) {
         ms10Count = 0;
-        timer10ms.textContent = 0;
+        elmTimer10ms.textContent = 0;
         countUpSec();
     }
 }
 
 function countUpSec() {
     sCount++;
-    timerS.textContent = sCount;
+    elmTimerS.textContent = sCount;
     if (sCount > 59) {
         sCount = 0;
-        timerS.textContent = 0;
+        elmTimerS.textContent = 0;
         countUpMin();
     }
 }
 
 function countUpMin() {
     mCount++;
-    timerM.textContent = mCount;
+    elmTimerM.textContent = mCount;
     if (mCount > 59) {
         mCount = 0;
-        timerM.textContent = 0;
+        elmTimerM.textContent = 0;
         countUpHour()
     }
 }
 
 function countUpHour() {
     hCount++;
-    timerH.textContent = hCount;
-    if (hCount > 99) {
-        //１００時間に到達した場合はカウンターストップ。リセットボタンのみ活性化
+    elmTimerH.textContent = hCount;
+    if (hCount > 99) {  //１００時間に到達した場合はカウンターストップ。リセットボタンのみ活性化
         clearInterval(timerStart);
         stopButton.disabled = true;
         resetButton.disabled = false;
